@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokemon</title>
+  <link rel="stylesheet" href="./css.css" />
+</head>
+<body>
+  <div class="tarjeta-pokemon">
+    <div class="barra-superior">
+      <h1>Pokemon</h1>
+    </div>
+
+    <div class="nombre-sprite">
+      <h1>Nidoran</h1>
+      <img class="sprite-pokemon" src="https://www.pngplay.com/wp-content/uploads/12/Squirtle-Pokemon-Download-Free-PNG.png" />
+    </div>
+
+    <div class="caracteristicas">
+      <h1><span class="carac">Numero</span>032</h1>
+      <h1><span class="carac">Nombre</span>Nidoran</h1>
+
+      <div class="imagen-tipos">
+        <h1><span class="carac">Tipo</span></h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Fuego_Pokemon.svg" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Lucha_Pokemon.svg" />
+      </div>
+
+      <h1><span class="carac">Altura</span>10ft</h1>
+      <h1><span class="carac">Peso</span>3asdadsadsdasadsdasdasdasadsdasadsdasdasdasadsdasdasadsdasdaskg</h1>
+    </div>
+
+    <div class="descripcion">
+      <h1>Notas Extra</h1>
+      <p>Naturaleza MIEDOSA. Conseguido en zona  asdasddsaads aadd asadsda sdasads adsadsads ads addasdasadsadsadsdasadsadsdas adsads con nv 22.</p>
+    </div>
+  </div>
+</body>
+</html>
