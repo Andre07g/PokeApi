@@ -90,6 +90,9 @@ function funcionesPC(pagina) {
             card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
         });
     }
+    else if(pagina === "pokedex.html"){
+        console.log("adas");
+    }
 }
 
 function funcionesTelefono(pagina) {
