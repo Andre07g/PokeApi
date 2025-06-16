@@ -1,0 +1,19 @@
+:root{
+    --black-transp-30: rgba(0, 0, 0, 0.3);
+    --battleship-gray: #888888;
+    --ligth-yellow:    rgb(247, 244, 211);
+    --imperial-red:    rgb(255, 70, 70);
+    --lavander-web:    #EBEBFF;
+    --eerie-black:     #202020;
+    --davys-gray:      #5A5959;
+    --risd-blue:       rgb(64, 89, 237);
+    --platinum:        #DDDDDD;
+    --silver:          #AAAAAA;
+    --nigth:           #161616;
+    --black:           #080808;
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url('../assets/fonts/pixel.ttf');
+}
