@@ -4,22 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokedex</title>
     <link rel="stylesheet" href="../css/css.css">
+    <link rel="icon" href="../assets/logos/icono.ico">
 </head>
 
 <body>
     <div id="pantalla-carga">
-        <img src="./assets/pokegif/b902bf0319416561211f8524ff517bcb.gif">
+        <img src="../assets/pokegif/b902bf0319416561211f8524ff517bcb.gif">
         <div class="loader">Cargando...</div>
     </div>
-    <div class="barra-negra"></div>
+    <div class="barra-negra"><a href="../index.html" class="linkVolver">Inicio</a></div>
     <main class="cuerpo-pokedex">
         <img src="../assets/logos/pokedex.png" id="logo-pokedex">
         <section class="pokedex">
             <img src="../assets/variedsources/consola.png" id="consola">
             <div class="pantallapoke"></div>
-            <div class="barraspoke"></div>
+            <div class="barraspoke">
+                <input type="text" id="buscador" placeholder="Buscar Pokémon...">
+                <div id="barra-resultados" class="barra-pokemon"></div>
+            </div>
         </section>
     </main>
     <div class="barra-negra"></div>

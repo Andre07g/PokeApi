@@ -2,12 +2,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  cursor: url("../assets/variedsources/cursor1.cur"), auto;
 }
 
 body {
   font-family: "Pixel";
   font-size: 1rem;
+  
+}
 
+button, a {
+  cursor: url("../assets/variedsources/cursor2.cur"), pointer;
 }
 
 #pantalla-carga {
@@ -25,6 +30,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   background-color: rgb(247, 244, 211);
+  cursor: url("../assets/variedsources/cursor1.cur"), auto;
 }
 
 .loader {
@@ -61,6 +67,7 @@ body {
   width: 20vw;
   top: 3vh;
   left: 5vw;
+  cursor: url("../assets/variedsources/cursor2.cur"), pointer;
 }
 
 .cuerpo-index {
@@ -69,16 +76,13 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  cursor: url("../assets/variedsources/cursor1.cur"), auto;
 }
+
 
 .imagen-boton {
   width: 40vh;
-  position: absolute;
-}
-
-.imagen-boton {
-  width: 40vh;
-  position: absolute;
+  position: absolute; cursor: url("../assets/variedsources/cursor2.cur"), pointer;
 }
 
 #boton-pokedex {
@@ -106,9 +110,24 @@ body {
 
 /*PAGINA CARTAS*/
 
-#logo-cartas{position: absolute;left: -2vw;width: 20vw;top:2vh}
-.cuerpo-cartas{background:linear-gradient(to bottom,rgb(255, 70, 70),rgb(255, 255, 255),rgb(85, 85, 85))}
-.cuerpo-cartas h1{text-align: center;padding: 10vh;color: white;}
+#logo-cartas {
+  position: absolute;
+  left: -2vw;
+  width: 20vw;
+  top: 2vh;
+  cursor: url("../assets/variedsources/cursor2.cur"), pointer;
+}
+
+.cuerpo-cartas {
+  background: linear-gradient(to bottom, rgb(255, 70, 70), rgb(255, 255, 255), rgb(85, 85, 85))
+}
+
+.cuerpo-cartas h1 {
+  text-align: center;
+  padding: 10vh;
+  color: white;
+}
+
 .carta-contenedor {
   perspective: 1000px;
   display: flex;
@@ -117,10 +136,11 @@ body {
   gap: 5vw;
   align-self: center;
   justify-self: center;
-   box-sizing: border-box;
-   align-items: center;
-justify-content: center;
-padding-bottom: 3vh;}
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3vh;
+}
 
 .carta {
   width: 20%;
@@ -131,7 +151,7 @@ padding-bottom: 3vh;}
   overflow: hidden;
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   align-self: center;
   justify-self: c;
 
@@ -148,75 +168,83 @@ padding-bottom: 3vh;}
 
 /*PAGINA POKEDEX*/
 
-#logo-pokedex{position: absolute;width: 100px;top:0}
-.cuerpo-pokedex{height: 80vh;}
+#logo-pokedex {
+  position: absolute;
+  width: 20vw;
+  top:0;
+  cursor: url("../assets/variedsources/cursor2.cur"), pointer;
+}
 
-.pokedex{align-items: center;position:absolute; height: 95%;top:4%;left:25%;}
-#consola{height: 100%;max-width: 70vw;}
-.pantallapoke{position: absolute;width: 60.8%;height: 36%;background-color: rgb(0, 0, 0);top: 8.78%;left: 19.5%;}
-.barraspoke{position: absolute;width: 55.6%;height: 40.2%;background-color: rgb(10, 10, 10);top: 55.24%;left: 21.18%;}
+.cuerpo-pokedex {
+  height: 80vh;
+  background:linear-gradient(to bottom,rgb(0, 0, 0),rgb(30, 83, 255), rgb(0, 0, 0))
+}
 
+.pokedex {
+  align-items: center;
+  position: absolute;
+  height: 95%;
+  top: 4%;
+  left: 28%;
+}
 
-/* 
+#consola {
+  height: 100%;
+  max-width: 70vw;
+}
 
-<body>
-    <div id="pantalla-carga">
-        <img src="./assets/pokegif/b902bf0319416561211f8524ff517bcb.gif">
-        <div class="loader">Cargando...</div>
-    </div>
-    <div class="barra-negra"></div>
-    <main class="cuerpo-pokedex">
-        <img src="../assets/logos/pokedex.png" id="logo-pokedex">
-        <section class="pokedex">
-            <img src="../assets/variedsources/consola.png">
-            <div class="pantallapoke"></div>
-            <div class="barraspoke"></div>
-        </section>
-    </main>
-    <div class="barra-negra"></div>
-</body>
-<script src="../js/script.js"></script>
+.pantallapoke {
+  position: absolute;
+  width: 60.8%;
+  height: 36%;
+  background-color: rgb(0, 0, 0);
+  top: 8.78%;
+  left: 19.5%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-</html>
+.barraspoke {
+  position: absolute;
+  width: 55.6%;
+  height: 40.2%;
+  background-color: rgb(10, 10, 10);
+  top: 55.24%;
+  left: 21.18%;
+}
 
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#buscador{font-family: "Pixel";width: 100%;background-color: rgb(31, 31, 31);}
 
 
+.barra-pokemon {
+  width:100%;
+  max-height: 85%;
+  overflow-y: scroll; /* mantiene scroll funcional */
+  overflow-x: hidden; /* evita scroll horizontal */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE y Edge */
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background: #5e5d5d;
+  padding: 10px;
+  margin-top: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.item-barra {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.2s;
+  cursor: url("../assets/variedsources/cursor2.cur"), pointer;
+}
+.item-barra:hover {
+  background: #242424;
+}
 
 
 
@@ -230,70 +258,61 @@ padding-bottom: 3vh;}
     "imagen datos"
     "descripcion descripcion";
   grid-template-columns: 60% 40%;
-  border: 3px solid black;
-  width: min(90%, 500px);
-  margin: 2rem auto;
-  background-color: white;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-}
+  grid-template-rows: auto 1fr auto;
 
+  width: 100%;
+  height: 100%;
 
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+
+  overflow: hidden;
+  border: none;
+} 
 .barra-superior {
   grid-area: header;
-  background-color: rgb(75, 179, 228);
-  border: 1px solid black;
-  padding: 1vh;
+  background-color: rgb(35, 36, 36);
+  padding: 0.3vh;
+  font-size: 0.8rem;
+  text-align: center;
 }
-
 
 .nombre-sprite {
   grid-area: imagen;
-  background-color: rgb(207, 225, 241);
-  border: 1px solid rgb(73, 146, 168);
-  padding: 1rem;
+  background-color: rgb(80, 79, 79);
+  padding: 0.5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.2rem;
 }
 
 .sprite-pokemon {
-  max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 
 .caracteristicas {
   grid-area: datos;
-  background-color: rgb(231, 240, 210);
-  padding: 1rem;
+  background-color: rgb(94, 94, 94);
+  padding: 0.5vh;
+  font-size: 0.7rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 0.5rem;
-  font-size: 1rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-
+  gap: 0.3rem;
+  overflow: hidden;
 }
 
 .caracteristicas h1 {
-  font-size: 1rem;
+  font-size: 0.7rem;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 100%;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  flex-wrap: wrap;
 }
 
 
 .carac {
-  background-color: gray;
+  background-color: rgb(22, 22, 22);
   border-radius: 10%;
   padding: 0.5vh 1vh;
   color: white;
@@ -313,7 +332,7 @@ padding-bottom: 3vh;}
 }
 
 .imagen-tipos img {
-  max-width: 50px;
+  max-width: 20px;
   height: auto;
   margin: 0;
   display: block;
@@ -322,7 +341,11 @@ padding-bottom: 3vh;}
 
 .descripcion {
   grid-area: descripcion;
-  background-color: rgb(168, 255, 160);
-  padding: 1vh;
-  border-top: 1px solid black;
+  background-color: rgb(31, 30, 30);
+  padding: 0.3vh;
+  font-size: 0.65rem;
+  overflow-y: auto;
 }
+
+
+.linkVolver{text-decoration: none;position:absolute;right: 1vw;font-size: 2rem;color: white;z-index: 1000;top: 1vh;}
