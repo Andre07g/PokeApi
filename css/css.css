@@ -5,8 +5,9 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Pixel";
   font-size: 1rem;
+
 }
 
 #pantalla-carga {
@@ -28,6 +29,11 @@ body {
 
 .loader {
   animation: parpadeo 1s infinite;
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url('../assets/fonts/pixel.ttf');
 }
 
 @keyframes parpadeo {
@@ -98,7 +104,47 @@ body {
   position: absolute;
 }
 
+/*PAGINA CARTAS*/
 
+#logo-cartas{position: absolute;left: -2vw;width: 20vw;top:2vh}
+.cuerpo-cartas{background:linear-gradient(to bottom,rgb(255, 70, 70),rgb(255, 255, 255),rgb(85, 85, 85))}
+.cuerpo-cartas h1{text-align: center;padding: 10vh;color: white;}
+.carta-contenedor {
+  perspective: 1000px;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 5vw;
+  align-self: center;
+  justify-self: center;
+   box-sizing: border-box;
+   align-items: center;
+justify-content: center;
+padding-bottom: 3vh;}
+
+.carta {
+  width: 20%;
+  min-width: 200px;
+  min-height: 280px; 
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  align-self: center;
+  justify-self: c;
+ 
+}
+
+.carta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  
+}
 
 
 
