@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("pantalla-carga").style.display = "flex";
-  window._inicioCarga = Date.now(); 
+  window._inicioCarga = Date.now();
 });
 
 window.onload = () => {
@@ -19,16 +19,16 @@ window.onload = () => {
     } else {
       funcionesPC(pagina);
     }
-  }, Math.max(tiempoRestante, 0)); 
+  }, Math.max(tiempoRestante, 0));
 };
 
 function funcionesPC(pagina) {
   if (pagina === "index.html") {
-    const listaGif = ["../assets/pokegif/pokemon2.gif","../assets/pokegif/pokemon3.gif","../assets/pokegif/pokemon4.gif",
-      "../assets/pokegif/1.gif","../assets/pokegif/5.gif",
-      "../assets/pokegif/6.gif","../assets/pokegif/7.gif","../assets/pokegif/8.gif","../assets/pokegif/9.gif","../assets/pokegif/pokemonultimo.gif"
+    const listaGif = ["../assets/pokegif/pokemon2.gif", "../assets/pokegif/pokemon3.gif", "../assets/pokegif/pokemon4.gif",
+      "../assets/pokegif/1.gif", "../assets/pokegif/5.gif",
+      "../assets/pokegif/6.gif", "../assets/pokegif/7.gif", "../assets/pokegif/8.gif", "../assets/pokegif/9.gif", "../assets/pokegif/pokemonultimo.gif"
     ]
-    const listaFondos = ["../assets/wallpapers/wal1.gif", "../assets/wallpapers/wal2.gif", "../assets/wallpapers/wal3.gif", "../assets/wallpapers/wal4.gif", "../assets/wallpapers/wal5.gif", "../assets/wallpapers/wal6.gif", "../assets/wallpapers/wal7.gif", "../assets/wallpapers/wal8.gif", "../assets/wallpapers/wal9.gif", "../assets/wallpapers/wal10.gif","../assets/wallpapers/wal11.gif","../assets/wallpapers/wal12.gif","../assets/wallpapers/wal13.gif"];
+    const listaFondos = ["../assets/wallpapers/wal1.gif", "../assets/wallpapers/wal2.gif", "../assets/wallpapers/wal3.gif", "../assets/wallpapers/wal4.gif", "../assets/wallpapers/wal5.gif", "../assets/wallpapers/wal6.gif", "../assets/wallpapers/wal7.gif", "../assets/wallpapers/wal8.gif", "../assets/wallpapers/wal9.gif", "../assets/wallpapers/wal10.gif", "../assets/wallpapers/wal11.gif", "../assets/wallpapers/wal12.gif", "../assets/wallpapers/wal13.gif"];
     const botonPokedex = document.getElementById("boton-pokedex");
     const botonCartas = document.getElementById("boton-cartas");
     const botonFondo = document.getElementById("boton-fondo");
@@ -38,7 +38,7 @@ function funcionesPC(pagina) {
     let posicionWal = 0;
     botonGif.addEventListener("click", () => {
 
-      if (posicionGif < 10) { console.log(posicionGif);botonGif.setAttribute("src", listaGif[posicionGif]); posicionGif += 1;console.log(posicionGif);console.log(listaGif[posicionGif]) }
+      if (posicionGif < 10) { console.log(posicionGif); botonGif.setAttribute("src", listaGif[posicionGif]); posicionGif += 1; console.log(posicionGif); console.log(listaGif[posicionGif]) }
       else { botonGif.setAttribute("src", listaGif[0]); posicionGif = 1 }
     })
     botonFondo.addEventListener("click", () => {
@@ -48,9 +48,10 @@ function funcionesPC(pagina) {
         botonFondo.setAttribute("src", "../assets/variedsources/fondonormal.png");
         botonFondo.style.top = "15vh";
       }, 200);
-      if (posicionWal < 13) { 
-        
-        fondo.style.backgroundImage = `url(${listaFondos[posicionWal]})`; posicionWal += 1 }
+      if (posicionWal < 13) {
+
+        fondo.style.backgroundImage = `url(${listaFondos[posicionWal]})`; posicionWal += 1
+      }
       else { fondo.style.backgroundImage = `url(${listaFondos[0]})`; posicionWal = 1 }
     })
     botonPokedex.addEventListener("click", () => {
@@ -149,40 +150,69 @@ function funcionesPC(pagina) {
           return `<img src="https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/master/icons/${tipo}.svg" alt="${tipo}" title="${tipo}">`;
         }).join('');
 
+        const tipoPrincipal = data.types[0].type.name;
+        const tipejo = String(tipoPrincipal)
+        const tipoColorMapping = [
+          { tipo: 'fire', color: '#ff795c' },
+          { tipo: 'water', color: '#5cdcff' },
+          { tipo: 'grass', color: '#cdff91 ' },
+          { tipo: 'electric', color: '#fdff69 ' },
+          { tipo: 'psychic', color: '#ff94f7  ' },
+          { tipo: 'rock', color: '#c1a382' },
+          { tipo: 'ground', color: '#c4925b' },
+          { tipo: 'ice', color: '#cbffff ' },
+          { tipo: 'dragon', color: '#ff6565 ' },
+          { tipo: 'fairy', color: '#ffbae4 ' },
+          { tipo: 'bug', color: '#89c771 ' },
+          { tipo: 'ghost', color: '#c4c1e6 ' },
+          { tipo: 'fighting', color: '#851616 ' },
+          { tipo: 'normal', color: 'lightgray' },
+          { tipo: 'poison', color: '#c764ff' },
+          { tipo: 'flying', color: 'skyblue' },
+          { tipo: 'dark', color: 'black' },
+          { tipo: 'steel', color: 'silver' }
+        ];
+
+        const tipoEncontrado = tipoColorMapping.find(t => t.tipo === tipejo);
+
+        let tipomarca = tipoEncontrado ? tipoEncontrado.color : 'gray';
+        tarjeta.style.backgroundColor = tipomarca;
         tarjeta.innerHTML = `
-      <div class="barra-superior">
-        <h1>POKÉMON</h1>
-      </div>
-
-      <div class="nombre-sprite">
-        <h1>${data.name.toUpperCase()}</h1>
-        <img class="sprite-pokemon" src="${data.sprites.front_default}" alt="${data.name}">
-      </div>
-
-      <div class="caracteristicas">
-        <h1><span class="carac">NÚMERO</span>${String(data.id).padStart(3, '0')}</h1>
-        <h1><span class="carac">NOMBRE</span>${data.name}</h1>
-        <div class="imagen-tipos">
-          <h1><span class="carac">TIPO</span></h1>
-          ${tiposHTML}
-        </div>
-        <h1><span class="carac">ALTURA</span>${data.height / 10} m</h1>
-        <h1><span class="carac">PESO</span>${data.weight / 10} kg</h1>
-      </div>
-
-      <div class="descripcion">
-        <h1>Notas Extra</h1>
-        <p>${descripcion}</p>
-      </div>
-    `;
-
+          <div class="barra-superior">
+            <h1>POKÉMON</h1>
+          </div>
+    
+          <div class="nombre-sprite">
+            <h1>${data.name.toUpperCase()}</h1>
+            <img class="sprite-pokemon" src="${data.sprites.front_default}" alt="${data.name}">
+          </div>
+    
+          <div class="caracteristicas">
+            <h1><span class="carac">NÚMERO</span>${String(data.id).padStart(3, '0')}</h1>
+            <h1><span class="carac">NOMBRE</span>${data.name}</h1>
+            <div class="imagen-tipos">
+              <h1><span class="carac">TIPO</span></h1>
+              ${tiposHTML}
+            </div>
+            <h1><span class="carac">ALTURA</span>${data.height / 10} m</h1>
+            <h1><span class="carac">PESO</span>${data.weight / 10} kg</h1>
+          </div>
+    
+          <div class="descripcion">
+            <h1>Notas Extra</h1>
+            <p>${descripcion}</p>
+          </div>
+        `;
         pantalla.appendChild(tarjeta);
+
+        return tipoPrincipal;
 
       } catch (error) {
         console.error("Error mostrando Pokémon:", error);
         alert("No se pudo mostrar el Pokémon.");
       }
     }
+
 
     function generarBarraBusqueda(lista) {
       const input = document.getElementById("buscador");
@@ -304,8 +334,8 @@ function funcionesTelefono(pagina) {
     document.querySelector('.carta-contenedor').addEventListener('mouseleave', () => {
       card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
     });
-  } else if (pagina==="pokedex.html"){
-    document.getElementById("consola").setAttribute("src","")
+  } else if (pagina === "pokedex.html") {
+    document.getElementById("consola").setAttribute("src", "")
     const botonPagPokedex = document.getElementById("logo-pokedex");
     botonPagPokedex.addEventListener("click", () => { window.open("../index.html", "_self") });
     async function obtenerPrimeros151Pokemon() {
@@ -353,40 +383,69 @@ function funcionesTelefono(pagina) {
           return `<img src="https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/master/icons/${tipo}.svg" alt="${tipo}" title="${tipo}">`;
         }).join('');
 
+        const tipoPrincipal = data.types[0].type.name;
+        const tipejo = String(tipoPrincipal)
+        const tipoColorMapping = [
+          { tipo: 'fire', color: '#ff795c' },
+          { tipo: 'water', color: '#5cdcff' },
+          { tipo: 'grass', color: '#cdff91 ' },
+          { tipo: 'electric', color: '#fdff69 ' },
+          { tipo: 'psychic', color: '#ff94f7  ' },
+          { tipo: 'rock', color: '#c1a382' },
+          { tipo: 'ground', color: '#c4925b' },
+          { tipo: 'ice', color: '#cbffff ' },
+          { tipo: 'dragon', color: '#ff6565 ' },
+          { tipo: 'fairy', color: '#ffbae4 ' },
+          { tipo: 'bug', color: '#89c771 ' },
+          { tipo: 'ghost', color: '#c4c1e6 ' },
+          { tipo: 'fighting', color: '#851616 ' },
+          { tipo: 'normal', color: 'lightgray' },
+          { tipo: 'poison', color: '#c764ff' },
+          { tipo: 'flying', color: 'skyblue' },
+          { tipo: 'dark', color: 'black' },
+          { tipo: 'steel', color: 'silver' }
+        ];
+
+        const tipoEncontrado = tipoColorMapping.find(t => t.tipo === tipejo);
+
+        let tipomarca = tipoEncontrado ? tipoEncontrado.color : 'gray';
+        tarjeta.style.backgroundColor = tipomarca;
         tarjeta.innerHTML = `
-      <div class="barra-superior">
-        <h1>POKÉMON</h1>
-      </div>
-
-      <div class="nombre-sprite">
-        <h1>${data.name.toUpperCase()}</h1>
-        <img class="sprite-pokemon" src="${data.sprites.front_default}" alt="${data.name}">
-      </div>
-
-      <div class="caracteristicas">
-        <h1><span class="carac">NÚMERO</span>${String(data.id).padStart(3, '0')}</h1>
-        <h1><span class="carac">NOMBRE</span>${data.name}</h1>
-        <div class="imagen-tipos">
-          <h1><span class="carac">TIPO</span></h1>
-          ${tiposHTML}
-        </div>
-        <h1><span class="carac">ALTURA</span>${data.height / 10} m</h1>
-        <h1><span class="carac">PESO</span>${data.weight / 10} kg</h1>
-      </div>
-
-      <div class="descripcion">
-        <h1>Notas Extra</h1>
-        <p>${descripcion}</p>
-      </div>
-    `;
-
+          <div class="barra-superior">
+            <h1>POKÉMON</h1>
+          </div>
+    
+          <div class="nombre-sprite">
+            <h1>${data.name.toUpperCase()}</h1>
+            <img class="sprite-pokemon" src="${data.sprites.front_default}" alt="${data.name}">
+          </div>
+    
+          <div class="caracteristicas">
+            <h1><span class="carac">NÚMERO</span>${String(data.id).padStart(3, '0')}</h1>
+            <h1><span class="carac">NOMBRE</span>${data.name}</h1>
+            <div class="imagen-tipos">
+              <h1><span class="carac">TIPO</span></h1>
+              ${tiposHTML}
+            </div>
+            <h1><span class="carac">ALTURA</span>${data.height / 10} m</h1>
+            <h1><span class="carac">PESO</span>${data.weight / 10} kg</h1>
+          </div>
+    
+          <div class="descripcion">
+            <h1>Notas Extra</h1>
+            <p>${descripcion}</p>
+          </div>
+        `;
         pantalla.appendChild(tarjeta);
+
+        return tipoPrincipal;
 
       } catch (error) {
         console.error("Error mostrando Pokémon:", error);
         alert("No se pudo mostrar el Pokémon.");
       }
     }
+
 
     function generarBarraBusqueda(lista) {
       const input = document.getElementById("buscador");
