@@ -1,10 +1,9 @@
-// Mostrar pantalla de carga al iniciar
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("pantalla-carga").style.display = "flex";
-  window._inicioCarga = Date.now(); // marca el tiempo inicial
+  window._inicioCarga = Date.now(); 
 });
 
-// Ocultar cuando todo esté cargado
 window.onload = () => {
   const tiempoTranscurrido = Date.now() - window._inicioCarga;
   const tiempoRestante = 2000 - tiempoTranscurrido;
@@ -20,9 +19,9 @@ window.onload = () => {
     } else {
       funcionesPC(pagina);
     }
-  }, Math.max(tiempoRestante, 0)); // Si ya pasaron más de 3 segundos, no espera más
+  }, Math.max(tiempoRestante, 0)); 
 };
-// Funciones según dispositivo y página
+
 function funcionesPC(pagina) {
   if (pagina === "index.html") {
     const listaFondos = ["../assets/wallpapers/wal1.gif", "../assets/wallpapers/wal2.gif", "../assets/wallpapers/wal3.gif", "../assets/wallpapers/wal4.gif", "../assets/wallpapers/wal5.gif", "../assets/wallpapers/wal6.gif", "../assets/wallpapers/wal7.gif", "../assets/wallpapers/wal8.gif", "../assets/wallpapers/wal9.gif", "../assets/wallpapers/wal10.gif",];

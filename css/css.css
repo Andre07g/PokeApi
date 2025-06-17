@@ -433,10 +433,12 @@ a {
   }
 
   /*Pagina pokedex*/
+  #logo-pokedex{top:1vh;left: 3vh;width: 30vw;}
+
 
   .cuerpo-pokedex {
     display: flex !important;
-    align-items: center !important;
+    align-items: start !important;
     justify-content: center !important;
     height: auto;
   }
@@ -446,6 +448,7 @@ a {
     position: relative;
     top: -2vh;
     left: 0;
+    min-height: 45vh;
   }
 
   .barraspoke {
@@ -472,4 +475,15 @@ a {
     margin: 0;
   }
 
+
+   /*CARGA*/
+
+
+#pantalla-carga img{
+  align-self: center;
+  width: 50%;
 }
+.loader{font-size: 0.9rem;}
+
+}
+
