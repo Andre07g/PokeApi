@@ -70,7 +70,14 @@ a {
 
 .cuerpo-index {
   height: 80vh;
-  background-image: url("../assets/wallpapers/wal10.gif");
+  background-image: url("../assets/wallpapers/wal13.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: url("../assets/variedsources/cursor1.cur"), auto;
+}
+.cuerpo-index {
+  height: 80vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
