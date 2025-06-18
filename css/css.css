@@ -395,16 +395,19 @@ a {
   z-index: 1000;
   top: 1vh;
 }
+
 #activarSonido{
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 20vh;
+  left: 30vw;
   padding: 10px 15px;
-  font-size: 16px;
-  background-color: #ffd700;
-  border: none;
+  font-size: 1rem;
+  background-color: rgba(79, 64, 83, 0);
+  border: 1px solid white;
   border-radius: 8px;
   cursor: pointer;
+  color:white;
+
   z-index: 100000;}
 
 /*RESPONSIVE MOBILE*/
@@ -436,7 +439,18 @@ a {
   display: block;
 }
 
-
+#activarSonido{
+  position: absolute;
+  bottom: 5vh;
+  left: 45vw;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: rgba(79, 64, 83, 0);
+  border: 1px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  color:white;
+  z-index: 100000;}
 
   .barra-negra {
     width: 100%;
