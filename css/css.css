@@ -415,6 +415,7 @@ a {
 }
 
 .video-intro video {
+  top:50vh !important;
   position: absolute;
   top: 0;
   left: 0;
