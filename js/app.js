@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.onload = () => {
   const tiempoTranscurrido = Date.now() - window._inicioCarga;
-  const tiempoRestante = 2000 - tiempoTranscurrido;
+  const tiempoRestante = 1000 - tiempoTranscurrido;
 
   setTimeout(() => {
     document.getElementById("pantalla-carga").style.display = "none";
@@ -29,9 +29,7 @@ const listaGif = ["./assets/pokegif/pokemon2.gif", "./assets/pokegif/pokemon3.gi
       "./assets/pokegif/6.gif", "./assets/pokegif/7.gif", "./assets/pokegif/8.gif", "./assets/pokegif/9.gif", "./assets/pokegif/pokemonultimo.gif"
     ]
     const listaFondos = ["./assets/wallpapers/wal1.gif", "./assets/wallpapers/wal2.gif", "./assets/wallpapers/wal3.gif", "./assets/wallpapers/wal4.gif", "./assets/wallpapers/wal5.gif", "./assets/wallpapers/wal6.gif", "./assets/wallpapers/wal7.gif", "./assets/wallpapers/wal8.gif", "./assets/wallpapers/wal9.gif", "./assets/wallpapers/wal10.gif", "./assets/wallpapers/wal11.gif", "./assets/wallpapers/wal12.gif", "./assets/wallpapers/wal13.gif"];
-    
-precargarImagenes(listaGif);
-  precargarImagenes(listaFondos);
+    precargarImagenes(listaFondos);
 
 const video = document.getElementById("video-poke");
 const introYaVista = localStorage.getItem("intro-vista");
@@ -49,6 +47,9 @@ if (!introYaVista) {
 
 function funcionesPC(pagina) {
   if (document.body.classList.contains("index-html")) {
+    precargarImagenes(listaGif);
+  
+
    const botonPokedex = document.getElementById("boton-pokedex");
     const botonCartas = document.getElementById("boton-cartas");
     const botonFondo = document.getElementById("boton-fondo");
@@ -292,7 +293,7 @@ const botonPokedex = document.getElementById("boton-pokedex");
     let posicionWal = 0;
     botonGif.addEventListener("click", () => {
 
-      if (posicionGif < 4) { botonGif.setAttribute("src", listaGif[posicionGif]); posicionGif += 1 }
+      if (posicionGif < 10) { botonGif.setAttribute("src", listaGif[posicionGif]); posicionGif += 1 }
       else { botonGif.setAttribute("src", listaGif[0]); posicionGif = 1 }
     })
     botonFondo.addEventListener("click", () => {
@@ -302,7 +303,7 @@ const botonPokedex = document.getElementById("boton-pokedex");
         botonFondo.setAttribute("src", "./assets/variedsources/fondonormal.png");
         botonFondo.style.top = "15vh";
       }, 200);
-      if (posicionWal < 10) { fondo.style.backgroundImage = `url(${listaFondos[posicionWal]})`; posicionWal += 1 }
+      if (posicionWal < 13) { fondo.style.backgroundImage = `url(${listaFondos[posicionWal]})`; posicionWal += 1 }
       else { fondo.style.backgroundImage = `url(${listaFondos[0]})`; posicionWal = 1 }
     })
     botonPokedex.addEventListener("click", () => {
