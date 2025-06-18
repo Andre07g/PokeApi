@@ -25,11 +25,11 @@ console.log("prendio")
 
 function funcionesPC(pagina) {
   if (document.body.classList.contains("index-html")) {
-    const listaGif = ["./assets/pokegif/pokemon2.gif", "../assets/pokegif/pokemon3.gif", "../assets/pokegif/pokemon4.gif",
-      "../assets/pokegif/1.gif", "../assets/pokegif/5.gif",
-      "../assets/pokegif/6.gif", "../assets/pokegif/7.gif", "../assets/pokegif/8.gif", "../assets/pokegif/9.gif", "../assets/pokegif/pokemonultimo.gif"
+    const listaGif = ["./assets/pokegif/pokemon2.gif", "./assets/pokegif/pokemon3.gif", "./assets/pokegif/pokemon4.gif",
+      "./assets/pokegif/1.gif", "./assets/pokegif/5.gif",
+      "./assets/pokegif/6.gif", "./assets/pokegif/7.gif", "./assets/pokegif/8.gif", "./assets/pokegif/9.gif", "./assets/pokegif/pokemonultimo.gif"
     ]
-    const listaFondos = ["./assets/wallpapers/wal1.gif", "../assets/wallpapers/wal2.gif", "../assets/wallpapers/wal3.gif", "../assets/wallpapers/wal4.gif", "../assets/wallpapers/wal5.gif", "../assets/wallpapers/wal6.gif", "../assets/wallpapers/wal7.gif", "../assets/wallpapers/wal8.gif", "../assets/wallpapers/wal9.gif", "../assets/wallpapers/wal10.gif", "../assets/wallpapers/wal11.gif", "../assets/wallpapers/wal12.gif", "../assets/wallpapers/wal13.gif"];
+    const listaFondos = ["./assets/wallpapers/wal1.gif", "./assets/wallpapers/wal2.gif", "./assets/wallpapers/wal3.gif", "./assets/wallpapers/wal4.gif", "./assets/wallpapers/wal5.gif", "./assets/wallpapers/wal6.gif", "./assets/wallpapers/wal7.gif", "./assets/wallpapers/wal8.gif", "./assets/wallpapers/wal9.gif", "./assets/wallpapers/wal10.gif", "./assets/wallpapers/wal11.gif", "./assets/wallpapers/wal12.gif", "./assets/wallpapers/wal13.gif"];
     const botonPokedex = document.getElementById("boton-pokedex");
     const botonCartas = document.getElementById("boton-cartas");
     const botonFondo = document.getElementById("boton-fondo");
@@ -43,10 +43,10 @@ function funcionesPC(pagina) {
       else { botonGif.setAttribute("src", listaGif[0]); posicionGif = 1 }
     })
     botonFondo.addEventListener("click", () => {
-      botonFondo.setAttribute("src", "../assets/variedsources/fondopulsado.png");
+      botonFondo.setAttribute("src", "./assets/variedsources/fondopulsado.png");
       botonFondo.style.top = "17.5vh";
       setTimeout(() => {
-        botonFondo.setAttribute("src", "../assets/variedsources/fondonormal.png");
+        botonFondo.setAttribute("src", "./assets/variedsources/fondonormal.png");
         botonFondo.style.top = "15vh";
       }, 200);
       if (posicionWal < 13) {
@@ -56,27 +56,27 @@ function funcionesPC(pagina) {
       else { fondo.style.backgroundImage = `url(${listaFondos[0]})`; posicionWal = 1 }
     })
     botonPokedex.addEventListener("click", () => {
-      botonPokedex.setAttribute("src", "../assets/variedsources/pokedexpulsado.png");
+      botonPokedex.setAttribute("src", "./assets/variedsources/pokedexpulsado.png");
       botonPokedex.style.top = "42vh";
       setTimeout(() => {
-        botonPokedex.setAttribute("src", "../assets/variedsources/pokedexnormal.png");
+        botonPokedex.setAttribute("src", "./assets/variedsources/pokedexnormal.png");
         botonPokedex.style.top = "40vh";
       }, 200);
-      setTimeout(() => { window.open("../html/pokedex.html", "_self") }, 300)
+      setTimeout(() => { window.open("./html/pokedex.html", "_self") }, 300)
     });
     botonCartas.addEventListener("click", () => {
-      botonCartas.setAttribute("src", "../assets/variedsources/cartaspulsado.png");
+      botonCartas.setAttribute("src", "./assets/variedsources/cartaspulsado.png");
       botonCartas.style.top = "67vh";
       setTimeout(() => {
-        botonCartas.setAttribute("src", "../assets/variedsources/cartasnormal.png");
+        botonCartas.setAttribute("src", "./assets/variedsources/cartasnormal.png");
         botonCartas.style.top = "65vh";
       }, 200);
-      setTimeout(() => { window.open("../html/cards.html", "_self") }, 300)
+      setTimeout(() => { window.open("./html/cards.html", "_self") }, 300)
     })
 
   } else if (document.body.classList.contains("cartas-html")) {
     const botonPagCartas = document.getElementById("logo-cartas");
-    botonPagCartas.addEventListener("click", () => { window.open("../index.html", "_self") });
+    botonPagCartas.addEventListener("click", () => { window.open("./index.html", "_self") });
     const cards = document.querySelectorAll('.carta');
 
     cards.forEach(card => {
@@ -105,7 +105,7 @@ function funcionesPC(pagina) {
   }
   else if (document.body.classList.contains("pokedex-html")) {
     const botonPagPokedex = document.getElementById("logo-pokedex");
-    botonPagPokedex.addEventListener("click", () => { window.open("../index.html", "_self") });
+    botonPagPokedex.addEventListener("click", () => { window.open("./index.html", "_self") });
     async function obtenerPrimeros151Pokemon() {
       const url = "https://pokeapi.co/api/v2/pokemon?limit=151";
       const res = await fetch(url);
@@ -264,8 +264,8 @@ function funcionesPC(pagina) {
 
 function funcionesTelefono(pagina) {
   if (document.body.classList.contains("index-html")) {
-    const listaFondos = ["../assets/wallpapers/wal1.gif", "../assets/wallpapers/wal2.gif", "../assets/wallpapers/wal3.gif", "../assets/wallpapers/wal4.gif", "../assets/wallpapers/wal5.gif", "../assets/wallpapers/wal6.gif", "../assets/wallpapers/wal7.gif", "../assets/wallpapers/wal8.gif", "../assets/wallpapers/wal9.gif", "../assets/wallpapers/wal10.gif",];
-    const listaGif = ["../assets/pokegif/pokemon1.gif", "../assets/pokegif/pokemon2.gif", "../assets/pokegif/pokemon3.gif", "../assets/pokegif/pokemonultimo.gif",];
+    const listaFondos = ["./assets/wallpapers/wal1.gif", "./assets/wallpapers/wal2.gif", "./assets/wallpapers/wal3.gif", "./assets/wallpapers/wal4.gif", "./assets/wallpapers/wal5.gif", "./assets/wallpapers/wal6.gif", "./assets/wallpapers/wal7.gif", "./assets/wallpapers/wal8.gif", "./assets/wallpapers/wal9.gif", "./assets/wallpapers/wal10.gif",];
+    const listaGif = ["./assets/pokegif/pokemon1.gif", "./assets/pokegif/pokemon2.gif", "./assets/pokegif/pokemon3.gif", "./assets/pokegif/pokemonultimo.gif",];
     const botonPokedex = document.getElementById("boton-pokedex");
     const botonCartas = document.getElementById("boton-cartas");
     const botonFondo = document.getElementById("boton-fondo");
@@ -279,37 +279,37 @@ function funcionesTelefono(pagina) {
       else { botonGif.setAttribute("src", listaGif[0]); posicionGif = 1 }
     })
     botonFondo.addEventListener("click", () => {
-      botonFondo.setAttribute("src", "../assets/variedsources/fondopulsado.png");
+      botonFondo.setAttribute("src", "./assets/variedsources/fondopulsado.png");
       botonFondo.style.top = "17.5vh";
       setTimeout(() => {
-        botonFondo.setAttribute("src", "../assets/variedsources/fondonormal.png");
+        botonFondo.setAttribute("src", "./assets/variedsources/fondonormal.png");
         botonFondo.style.top = "15vh";
       }, 200);
       if (posicionWal < 10) { fondo.style.backgroundImage = `url(${listaFondos[posicionWal]})`; posicionWal += 1 }
       else { fondo.style.backgroundImage = `url(${listaFondos[0]})`; posicionWal = 1 }
     })
     botonPokedex.addEventListener("click", () => {
-      botonPokedex.setAttribute("src", "../assets/variedsources/pokedexpulsado.png");
+      botonPokedex.setAttribute("src", "./assets/variedsources/pokedexpulsado.png");
       botonPokedex.style.top = "42vh";
       setTimeout(() => {
-        botonPokedex.setAttribute("src", "../assets/variedsources/pokedexnormal.png");
+        botonPokedex.setAttribute("src", "./assets/variedsources/pokedexnormal.png");
         botonPokedex.style.top = "40vh";
       }, 200);
-      setTimeout(() => { window.open("../html/pokedex.html", "_self") }, 300)
+      setTimeout(() => { window.open("./html/pokedex.html", "_self") }, 300)
     });
     botonCartas.addEventListener("click", () => {
-      botonCartas.setAttribute("src", "../assets/variedsources/cartaspulsado.png");
+      botonCartas.setAttribute("src", "./assets/variedsources/cartaspulsado.png");
       botonCartas.style.top = "67vh";
       setTimeout(() => {
-        botonCartas.setAttribute("src", "../assets/variedsources/cartasnormal.png");
+        botonCartas.setAttribute("src", "./assets/variedsources/cartasnormal.png");
         botonCartas.style.top = "65vh";
       }, 200);
-      setTimeout(() => { window.open("../html/cards.html", "_self") }, 300)
+      setTimeout(() => { window.open("./html/cards.html", "_self") }, 300)
     })
 
   } else if (document.body.classList.contains("cartas-html")) {
     const botonPagCartas = document.getElementById("logo-cartas");
-    botonPagCartas.addEventListener("click", () => { window.open("../index.html", "_self") });
+    botonPagCartas.addEventListener("click", () => { window.open("./index.html", "_self") });
     const cards = document.querySelectorAll('.carta');
 
     cards.forEach(card => {
@@ -338,7 +338,7 @@ function funcionesTelefono(pagina) {
   } else if (document.body.classList.contains("pokedex-html")) {
     document.getElementById("consola").setAttribute("src", "")
     const botonPagPokedex = document.getElementById("logo-pokedex");
-    botonPagPokedex.addEventListener("click", () => { window.open("../index.html", "_self") });
+    botonPagPokedex.addEventListener("click", () => { window.open("./index.html", "_self") });
     async function obtenerPrimeros151Pokemon() {
       const url = "https://pokeapi.co/api/v2/pokemon?limit=151";
       const res = await fetch(url);
