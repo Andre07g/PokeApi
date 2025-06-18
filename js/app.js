@@ -13,9 +13,10 @@ window.onload = () => {
 
     const esTelefono = /Mobi|Android/i.test(navigator.userAgent);
     const pagina = location.pathname.split("/").pop();
-
+console.log("prendio")
     if (esTelefono) {
       funcionesTelefono(pagina);
+      console.log("aaaa")
     } else {
       funcionesPC(pagina);
     }
@@ -23,7 +24,7 @@ window.onload = () => {
 };
 
 function funcionesPC(pagina) {
-  if (pagina === "index.html") {
+  if (document.body.classList.contains("index-html")) {
     const listaGif = ["../assets/pokegif/pokemon2.gif", "../assets/pokegif/pokemon3.gif", "../assets/pokegif/pokemon4.gif",
       "../assets/pokegif/1.gif", "../assets/pokegif/5.gif",
       "../assets/pokegif/6.gif", "../assets/pokegif/7.gif", "../assets/pokegif/8.gif", "../assets/pokegif/9.gif", "../assets/pokegif/pokemonultimo.gif"
@@ -73,7 +74,7 @@ function funcionesPC(pagina) {
       setTimeout(() => { window.open("../html/cards.html", "_self") }, 300)
     })
 
-  } else if (pagina === "cards.html") {
+  } else if (document.body.classList.contains("cartas-html")) {
     const botonPagCartas = document.getElementById("logo-cartas");
     botonPagCartas.addEventListener("click", () => { window.open("../index.html", "_self") });
     const cards = document.querySelectorAll('.carta');
@@ -102,7 +103,7 @@ function funcionesPC(pagina) {
       card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
     });
   }
-  else if (pagina === "pokedex.html") {
+  else if (document.body.classList.contains("pokedex-html")) {
     const botonPagPokedex = document.getElementById("logo-pokedex");
     botonPagPokedex.addEventListener("click", () => { window.open("../index.html", "_self") });
     async function obtenerPrimeros151Pokemon() {
