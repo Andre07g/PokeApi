@@ -398,11 +398,11 @@ a {
 
 #activarSonido{
   position: absolute;
-  bottom: 20vh;
-  left: 30vw;
+  bottom: 2vh;
+  left: 2vw;
   padding: 10px 15px;
   font-size: 1rem;
-  background-color: rgba(79, 64, 83, 0);
+  background-color: rgba(79, 64, 83, 0.281);
   border: 1px solid white;
   border-radius: 8px;
   cursor: pointer;
@@ -442,10 +442,10 @@ a {
 #activarSonido{
   position: absolute;
   bottom: 5vh;
-  left: 45vw;
+  left: 40vw;
   padding: 10px 15px;
   font-size: 1rem;
-  background-color: rgba(79, 64, 83, 0);
+  background-color: rgba(79, 64, 83, 0.281);
   border: 1px solid white;
   border-radius: 8px;
   cursor: pointer;
