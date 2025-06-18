@@ -30,7 +30,8 @@ const listaGif = ["./assets/pokegif/pokemon2.gif", "./assets/pokegif/pokemon3.gi
     ]
     const listaFondos = ["./assets/wallpapers/wal1.gif", "./assets/wallpapers/wal2.gif", "./assets/wallpapers/wal3.gif", "./assets/wallpapers/wal4.gif", "./assets/wallpapers/wal5.gif", "./assets/wallpapers/wal6.gif", "./assets/wallpapers/wal7.gif", "./assets/wallpapers/wal8.gif", "./assets/wallpapers/wal9.gif", "./assets/wallpapers/wal10.gif", "./assets/wallpapers/wal11.gif", "./assets/wallpapers/wal12.gif", "./assets/wallpapers/wal13.gif"];
     precargarImagenes(listaFondos);
-
+precargarImagenes(listaGif);
+  
 const video = document.getElementById("video-poke");
 const introYaVista = localStorage.getItem("intro-vista");
 
@@ -47,8 +48,7 @@ if (!introYaVista) {
 
 function funcionesPC(pagina) {
   if (document.body.classList.contains("index-html")) {
-    precargarImagenes(listaGif);
-  
+    
 
    const botonPokedex = document.getElementById("boton-pokedex");
     const botonCartas = document.getElementById("boton-cartas");
