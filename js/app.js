@@ -37,7 +37,11 @@ const introYaVista = localStorage.getItem("intro-vista");
 
 if (!introYaVista) {
   document.querySelector(".video-intro").style.display = "block";
-
+  document.getElementById("activarSonido").addEventListener("click", () => {
+  video.muted = false;
+  video.volume = 1;
+  document.getElementById("activarSonido").style.display = "none";
+});
   video.addEventListener("ended", () => {
     document.querySelector(".video-intro").style.display = "none";
     localStorage.setItem("intro-vista", "true");

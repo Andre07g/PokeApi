@@ -395,6 +395,17 @@ a {
   z-index: 1000;
   top: 1vh;
 }
+#activarSonido{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #ffd700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100000;}
 
 /*RESPONSIVE MOBILE*/
 
@@ -415,7 +426,7 @@ a {
 }
 
 .video-intro video {
-  top:50vh !important;
+  top:30vh !important;
   position: absolute;
   top: 0;
   left: 0;
