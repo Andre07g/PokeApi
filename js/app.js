@@ -23,14 +23,33 @@ console.log("prendio")
   }, Math.max(tiempoRestante, 0));
 };
 
-function funcionesPC(pagina) {
-  if (document.body.classList.contains("index-html")) {
-    const listaGif = ["./assets/pokegif/pokemon2.gif", "./assets/pokegif/pokemon3.gif", "./assets/pokegif/pokemon4.gif",
+
+const listaGif = ["./assets/pokegif/pokemon2.gif", "./assets/pokegif/pokemon3.gif", "./assets/pokegif/pokemon4.gif",
       "./assets/pokegif/1.gif", "./assets/pokegif/5.gif",
       "./assets/pokegif/6.gif", "./assets/pokegif/7.gif", "./assets/pokegif/8.gif", "./assets/pokegif/9.gif", "./assets/pokegif/pokemonultimo.gif"
     ]
     const listaFondos = ["./assets/wallpapers/wal1.gif", "./assets/wallpapers/wal2.gif", "./assets/wallpapers/wal3.gif", "./assets/wallpapers/wal4.gif", "./assets/wallpapers/wal5.gif", "./assets/wallpapers/wal6.gif", "./assets/wallpapers/wal7.gif", "./assets/wallpapers/wal8.gif", "./assets/wallpapers/wal9.gif", "./assets/wallpapers/wal10.gif", "./assets/wallpapers/wal11.gif", "./assets/wallpapers/wal12.gif", "./assets/wallpapers/wal13.gif"];
-    const botonPokedex = document.getElementById("boton-pokedex");
+    
+precargarImagenes(listaGif);
+  precargarImagenes(listaFondos);
+
+const video = document.getElementById("video-poke");
+const introYaVista = localStorage.getItem("intro-vista");
+
+if (!introYaVista) {
+  document.querySelector(".video-intro").style.display = "block";
+
+  video.addEventListener("ended", () => {
+    document.querySelector(".video-intro").style.display = "none";
+    localStorage.setItem("intro-vista", "true");
+  });
+} else {
+  document.querySelector(".video-intro").style.display = "none";
+}
+
+function funcionesPC(pagina) {
+  if (document.body.classList.contains("index-html")) {
+   const botonPokedex = document.getElementById("boton-pokedex");
     const botonCartas = document.getElementById("boton-cartas");
     const botonFondo = document.getElementById("boton-fondo");
     const botonGif = document.getElementById("pokemon-gif");
@@ -264,9 +283,7 @@ function funcionesPC(pagina) {
 
 function funcionesTelefono(pagina) {
   if (document.body.classList.contains("index-html")) {
-    const listaFondos = ["./assets/wallpapers/wal1.gif", "./assets/wallpapers/wal2.gif", "./assets/wallpapers/wal3.gif", "./assets/wallpapers/wal4.gif", "./assets/wallpapers/wal5.gif", "./assets/wallpapers/wal6.gif", "./assets/wallpapers/wal7.gif", "./assets/wallpapers/wal8.gif", "./assets/wallpapers/wal9.gif", "./assets/wallpapers/wal10.gif",];
-    const listaGif = ["./assets/pokegif/pokemon1.gif", "./assets/pokegif/pokemon2.gif", "./assets/pokegif/pokemon3.gif", "./assets/pokegif/pokemonultimo.gif",];
-    const botonPokedex = document.getElementById("boton-pokedex");
+const botonPokedex = document.getElementById("boton-pokedex");
     const botonCartas = document.getElementById("boton-cartas");
     const botonFondo = document.getElementById("boton-fondo");
     const botonGif = document.getElementById("pokemon-gif");
@@ -491,4 +508,10 @@ function funcionesTelefono(pagina) {
     })();
 
   }
+}
+function precargarImagenes(lista) {
+  lista.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
 }

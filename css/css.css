@@ -6,6 +6,26 @@
   padding: 0;
   cursor: url("../assets/variedsources/cursor1.cur"), auto;
 }
+.video-intro {display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: black;
+}
+
+.video-intro video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
 
 body {
   font-family: "Pixel";
@@ -29,7 +49,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
   font-size: 1.5rem;
   font-weight: bold;
   background-color: var(--ligth-yellow);

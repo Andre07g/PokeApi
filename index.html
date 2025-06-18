@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokemon</title>
   <link rel="stylesheet" href="https://andre07g.github.io/PokeApi/css/css.css">
-  <link rel="icon" href="./assets/logos/icono.ico">
+  <link rel="icon" href="/assets/logos/icono.ico">
 </head>
+
 <body class="index-html">
+
   <div id="pantalla-carga">
     <img src="./assets/pokegif/b902bf0319416561211f8524ff517bcb.gif">
-  <div class="loader">Cargando...</div>
-</div>
-    <div class="barra-negra">
-    </div>
-    <img src="./assets/logos/Pokemon-Yellow-Logo-PNG-Pic-Background.png" class="logo-pokemon">
+    <div class="loader">Cargando...</div>
+  </div>
+  <div class="barra-negra">
+  </div>
+  <img src="./assets/logos/Pokemon-Yellow-Logo-PNG-Pic-Background.png" class="logo-pokemon">
   <main class="cuerpo-index">
     <img src="./assets/variedsources/pokedexnormal.png" id="boton-pokedex" class="imagen-boton">
     <img src="./assets/variedsources/cartasnormal.png" id="boton-cartas" class="imagen-boton">
@@ -22,6 +25,13 @@
     <img src="./assets/pokegif/pokemonultimo.gif" id="pokemon-gif">
   </main>
   <div class="barra-negra"></div>
+  <div class="video-intro">
+    <video autoplay muted playsinline id="video-poke">
+      <source src="./assets/intro.mp4" type="video/mp4">
+      Tu navegador no soporta el video HTML5.
+    </video>
+  </div>
 </body>
 <script src="https://andre07g.github.io/PokeApi/js/app.js"></script>
+
 </html>
